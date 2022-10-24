@@ -44,37 +44,56 @@ document.addEventListener("DOMContentLoaded", function(){
     headerWrap.classList.remove('on');
     navWrap.classList.remove('on');
   });
-  
-  // Main Img Slide
-  const mainImg = document.querySelector('.main-img-wrap');
-  const playPauseBtn = document.querySelector('.btn-box .pause');
-  const pageNow = document.querySelector('.btn-box .now');
-  let count = 1;
-  let slideWidth = 100 / 6;
-  let autoSlide = setInterval(nextSlide, 3000);
-  function nextSlide(){
-    if(count == 6){
-      clearInterval(autoSlide);
-      return;
-    } 
-    mainImg.style.transform = `translateX(${-count*slideWidth}%)`;
-    mainImg.style.transition = 'transform 0.8s ease-in-out';
-    count++;
-    pageNow.innerText = count;
-  };
 
+  // scroll up down event
+  let before = 0;
+  window.addEventListener('scroll',(ev)=>{
+    if(window.scrollY <= 3){
+      headerWrap.classList.remove('on');
+      headerWrap.classList.add('fixed');
+    }else if(before < window.scrollY) {
+      headerWrap.classList.remove('fixed');
+    }else {
+      headerWrap.classList.add('fixed');
+      headerWrap.classList.add('on');
+      headerWrap.addEventListener('mouseleave', function(){
+        if(window.scrollY > 3){
+          headerWrap.classList.remove('fixed');
+        };
+      });
+    };
+  	before = window.scrollY;
+  });
+
+  // Main Img Slide
+  // const mainImg = document.querySelector('.main-img-wrap');
+  // const pageNow = document.querySelector('.btn-box .now');
+  // let count = 1;
+  // let slideWidth = 100 / 6;
+  // let autoSlide = setInterval(nextSlide, 3000);
+  // function nextSlide(){
+  //   if(count == 6){
+  //     clearInterval(autoSlide);
+  //     return;
+  //   }
+  //   mainImg.style.transform = `translateX(${-count*slideWidth}%)`;
+  //   mainImg.style.transition = 'transform 0.8s ease-in-out';
+  //   count++;
+  //   pageNow.innerText = count;
+  // };
+  //
+  const playPauseBtn = document.querySelector('.btn-wrap .pause');
   playPauseBtn.addEventListener('click', function(){
     if(this.className == 'pause'){
+      swiper.autoplay.stop();
       this.className = 'play';
       this.children[0].className = 'fa-solid fa-play';
-      clearInterval(autoSlide);
     }else if(this.className == 'play'){
-      clearInterval(autoSlide);
+      swiper.autoplay.start();
       this.className = 'pause';
       this.children[0].className = 'fa-solid fa-pause';
-      autoSlide = setInterval(nextSlide, 3500);
     }
   });
 
-  
+
 });

@@ -12,11 +12,13 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
   <link rel="stylesheet" href="./css/initial.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="./css/swiper.css">
   <link rel="stylesheet" href="./css/style.css">
   <script src="./js/common.js"></script>
 </head>
 <body>
-  <div id="header-wrap">
+  <div id="header-wrap" class="fixed">
     <header id="header">
       <div id="logo">
         <h1><a href="#"><img src="https://www.cjolivenetworks.co.kr/images/common/logo-white.svg" alt="로고이미지"></a></h1>
@@ -98,10 +100,11 @@
     </div>
   </div>
 
-  <div id="mainbanner">
-    <ul class="main-img-wrap">
-      <li class="main-img">
+  <div id="mainbanner" class="swiper mySwiper">
+    <div class="main-img-wrap swiper-wrapper">
+      <div class="main-img swiper-slide">
         <div class="inner">
+          <img src="./img/main_bg_1.png" alt="main_bg_1">
           <div id="maintext">
             <h1 class="maintitle">올해 가을도 CJ ONE과 함께<br>일상의 순간을 원더풀하게!</h1>
             <p class="subtitle">2,800만명의 소비데이터를 기반으로 한<br>맞춤형 타겟 광고 서비스를 만나보세요.</p>
@@ -109,9 +112,10 @@
             <a href="#" class="btn btn-outline">소개 사이트 →</a>
           </div>
         </div>
-      </li>
-      <li class="main-img">
+      </div>
+      <div class="main-img swiper-slide">
         <div class="inner">
+          <img src="./img/main_bg_2.png" alt="main_bg_2">
           <div id="maintext">
             <h1 class="maintitle">시각장애인을 위한 화면 해설 방송에<br>'AI 보이스 클로닝'기술 적용</h1>
             <p class="subtitle">텍스트를 입력하면 음성을 자동으로 생성해주는 AI기술로<br>시각장애인이 다양한 콘텐츠를 유명인의 내레이션으로 즐기게 되었습니다..</p>
@@ -119,9 +123,10 @@
             <a href="#" class="btn btn-outline">뉴스 보기 →</a>
           </div>
         </div>
-      </li>
-      <li class="main-img">
+      </div>
+      <div class="main-img swiper-slide">
         <div class="inner">
+          <img src="./img/main_bg_3.png" alt="main_bg_3">
           <div id="maintext">
             <h1 class="maintitle">IT서비스 업계 최초<br>'인간 중심'의 AI윤리원칙 선포</h1>
             <p class="subtitle">AI기술을 활용할 때 구성원들이 반드시 실천해야 할<br>5대 원칙을 만들었습니다.</p>
@@ -129,41 +134,42 @@
             <a href="#" class="btn btn-outline">뉴스 보기 →</a>
           </div>
         </div>
-      </li>
-      <li class="main-img">
+      </div>
+      <div class="main-img swiper-slide">
         <div class="inner">
+          <img src="./img/main_bg_4.png" alt="main_bg_4">
           <div id="maintext">
             <h1 class="maintitle">크로스 마케팅 플랫픔<br>'ColLAB' 론칭</h1>
             <p class="subtitle">1억 2천만 회원 데이터로<br>정교한 타겟 맞춤 광고 집행이 가능합니다.</p>
             <a href="#" class="btn">뉴스 보기 →</a>
           </div>
         </div>
-      </li>
-      <li class="main-img">
+      </div>
+      <div class="main-img swiper-slide">
         <div class="inner">
+          <img src="./img/main_bg_5.png" alt="main_bg_5">
           <div id="maintext">
             <h1 class="maintitle">AI·AR 신기술로<br>산업안전 메타버스 3종 개발</h1>
             <p class="subtitle">산업 현장의 중대재해 예방과 작업자의 안전 보건을 통해<br>ESG경영을 지원합니다.</p>
             <a href="#" class="btn">뉴스 보기 →</a>
           </div>
-    </div>
-      </li>
-      <li class="main-img">
+        </div>
+      </div>
+      <div class="main-img swiper-slide">
         <div class="inner">
+          <img src="./img/main_bg_6.png" alt="main_bg_6">
           <div id="maintext">
             <h1 class="maintitle">AI 아트워크 플랫폼 에어트(AiRT) 기술로<br>예술작품 NFT 발행</h1>
             <p class="subtitle">AI 디지털아트 류재춘 화백 에디션 완판을 시작으로<br>K-콘텐츠 NFT확산에 나섭니다.</p>
             <a href="#" class="btn">서비스 보기 →</a>
             <a href="#" class="btn btn-outline">뉴스 보기 →</a>
           </div>
-    </div>
-      </li>
-    </ul>
-    <div class="btn-wrap">
-      <div class="btn-box">
-        <button class="pause"><i class="fa-solid fa-pause"></i></button>
-        <p><span class="now">1</span>|6</p>
+        </div>
       </div>
+    </div>
+    <div class="btn-wrap">
+      <button class="pause"><i class="fa-solid fa-pause"></i></button>
+      <div class="btn-box swiper-pagination"></div>
     </div>
     <div class="down">
       <i class="fa-solid fa-angles-down"></i>
@@ -359,5 +365,27 @@
       </div>
     </div>
   </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+        // spaceBetween: 30,
+        loop: true,
+        centeredSlides: true,
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          type: "fraction",
+          clickable: true,
+        },
+    });
+  </script>
 </body>
 </html>

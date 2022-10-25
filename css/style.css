@@ -176,6 +176,15 @@ h1,h2,h3,h4,h5,h6 { line-height: 1; }
   width: 100%;
 }
 
+.all-menu-wrap {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+}
+
 #mainbanner .inner {
   position: relative;
   width: 100%;
@@ -377,8 +386,8 @@ h1,h2,h3,h4,h5,h6 { line-height: 1; }
 #container section:nth-child(2) .inner .box.img {
   background-image: url("../img/section_2_img.png");
   background-repeat: no-repeat;
-  background-size: contain;
-  background-position: 10% center;
+  background-size: 120%;
+  background-position: 120% center;
 }
 
 #container section:nth-child(3) {

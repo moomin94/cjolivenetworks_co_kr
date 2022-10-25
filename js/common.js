@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function(){
   // scroll up down event
   let before = 0;
   window.addEventListener('scroll',(ev)=>{
-    if(window.scrollY <= 3){
+    if(window.scrollY <= 4){
       headerWrap.classList.remove('on');
       headerWrap.classList.add('fixed');
     }else if(before < window.scrollY) {

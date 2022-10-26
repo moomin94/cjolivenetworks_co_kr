@@ -2,6 +2,19 @@
 
 document.addEventListener("DOMContentLoaded", function(){
 
+  // search btn - area toggle
+  const searchBtn = document.querySelector('#header .search');
+  const searchWrap = document.querySelector('.search-wrap');
+  const searchCloseBtn = searchWrap.querySelector('.close');
+  searchBtn.addEventListener('click', function(){
+    searchWrap.classList.add('on');
+    document.body.style.overflow = 'hidden';
+  })
+  searchCloseBtn.addEventListener('click', function(){
+    searchWrap.classList.remove('on');
+    document.body.style.overflow = 'auto';
+  })
+
   // all menu toggle
   const allMenuBtn = document.querySelector('.all-menu');
   const allMenuWrap = document.querySelector('.all-menu-wrap');
@@ -11,6 +24,8 @@ document.addEventListener("DOMContentLoaded", function(){
     headerWrap.classList.add('dark');
     allMenuWrap.classList.add('on');
     document.body.style.overflow = 'hidden';
+    headerWrap.classList.remove('on');
+    navWrap.classList.remove('on');
   });
 
   allMenuCloseBtn.addEventListener('click', function(){

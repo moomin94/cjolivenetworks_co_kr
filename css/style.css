@@ -16,7 +16,7 @@ h1,h2,h3,h4,h5,h6 { line-height: 1; }
   top: -90px;
   z-index: 300;
   background-color: rgba(255,255,255,0);
-  transition: all .3s;
+  transition: all .2s;
 }
 
 #header-wrap.fixed {
@@ -42,9 +42,8 @@ h1,h2,h3,h4,h5,h6 { line-height: 1; }
 #header .close {
   display: none;
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 10px;
+  top: 35px;
+  right: 13px;
 }
 
 #header .close i {
@@ -212,6 +211,98 @@ h1,h2,h3,h4,h5,h6 { line-height: 1; }
   width: 100%;
 }
 
+.search-wrap {
+  display: none;
+  width: 100%;
+  min-width: 1320px;
+  background-color: rgba(0,0,0,0.2);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.search-wrap .close {
+  position: absolute;
+  top: 33px;
+  right: 41px;
+  font-size: 31px;
+  margin-right: 17px;
+}
+
+.search-wrap .inner {
+  background-color: #ffffff;
+  padding: 96px 80px;
+  height: 336px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.search-box {
+  width: 700px;
+  min-width: 700px;
+  margin: 0 auto;
+}
+
+.search-form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 1.5;
+  border-bottom: 1px solid #333333;
+}
+
+.search-form input {
+  display: block;
+  width: 700px;
+  height: 63px;
+  line-height: 63px;
+  border: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-size: 24px;
+  letter-spacing: -1px;
+}
+
+.search-form input::placeholder {
+  top: 50%;
+  font-size: 22px;
+  color: #999999;
+  letter-spacing: -1px;
+}
+
+.search-form .search {
+  font-size: 30px;
+  line-height: 63px;
+}
+
+.search-wrap.on {
+  display: block;
+}
+
+.search-tag {
+  margin: 40px 0 0 -8px;
+  display: flex;
+}
+
+.search-tag li {
+  margin: 8px 0px 0px 8px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+}
+
+.search-tag li a {
+  color: #000000;
+  display: inline-block;
+  padding: 8px 14px;
+  line-height: 1.5;
+  font-size: 14px;
+  letter-spacing: -0.3px;
+}
+
 .all-menu-wrap {
   min-width: 1024px;
   position: fixed;
@@ -230,7 +321,7 @@ h1,h2,h3,h4,h5,h6 { line-height: 1; }
   scrollbar-width: none; /* Firefox */
   opacity: 0;
   visibility: hidden;
-  transition: all .3s;
+  transition: all .2s;
 }
 
 .all-menu-wrap::-webkit-scrollbar {

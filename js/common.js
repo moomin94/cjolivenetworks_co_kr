@@ -2,6 +2,23 @@
 
 document.addEventListener("DOMContentLoaded", function(){
 
+  // all menu toggle
+  const allMenuBtn = document.querySelector('.all-menu');
+  const allMenuWrap = document.querySelector('.all-menu-wrap');
+  const allMenuCloseBtn = document.querySelector('#header .close');
+
+  allMenuBtn.addEventListener('click', function(){
+    headerWrap.classList.add('dark');
+    allMenuWrap.classList.add('on');
+    document.body.style.overflow = 'hidden';
+  });
+
+  allMenuCloseBtn.addEventListener('click', function(){
+    headerWrap.classList.remove('dark');
+    allMenuWrap.classList.remove('on');
+    document.body.style.overflow = 'auto';
+  });
+
   // nav toggle
   const navLi = document.querySelectorAll('#gnb>li');
   const navWrap = document.querySelector('.gnb-all-wrap');

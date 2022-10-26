@@ -27,6 +27,41 @@ h1,h2,h3,h4,h5,h6 { line-height: 1; }
   background-color: rgba(255,255,255,1);
 }
 
+#header-wrap.dark {
+  background-color: rgba(0,0,0,1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid #333333;
+}
+
+#header-wrap.dark > #header .inner {
+  display: none;
+}
+
+#header .close {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+}
+
+#header .close i {
+  font-size: 30px;
+  color: #ffffff;
+  opacity: 0.7;
+  transition: all .2s;
+}
+
+#header .close i:hover {
+  opacity: 1;
+}
+
+#header-wrap.dark > #header .close {
+  display: block;
+}
+
 #header-wrap.on #logo img {
   content: url('https://www.cjolivenetworks.co.kr/images/common/logo.svg');
 }
@@ -36,6 +71,7 @@ h1,h2,h3,h4,h5,h6 { line-height: 1; }
 }
 
 #header {
+  position: relative;
   width: 1320px;
   height: 90px;
   margin: 0 auto;
@@ -177,12 +213,86 @@ h1,h2,h3,h4,h5,h6 { line-height: 1; }
 }
 
 .all-menu-wrap {
+  min-width: 1024px;
   position: fixed;
+  top: 90px;
+  bottom: 0;
+  left: 0;
+  right: 0;
   width: 100%;
-  height: 100%;
-  z-index: 9999;
+  z-index: 99;
+  background: #000 url('../img/menu_bg.jpg') no-repeat center;
+  background-size: cover;
+  -webkit-font-smoothing: antialiased;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
   opacity: 0;
   visibility: hidden;
+  transition: all .3s;
+}
+
+.all-menu-wrap::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+}
+
+.all-menu-wrap.on {
+  opacity: 1;
+  visibility: visible;
+}
+
+.all-menu-box {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 74px 24px 0;
+}
+
+.all-menu-box .list {
+  width: 100%;
+  display: flex;
+}
+
+.all-menu-box .list h2 {
+  font-size: 32px;
+  color: #ffffff;
+  font-weight: 500;
+  width: 204px;
+}
+
+.all-menu-box .main-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1096px;
+}
+
+.all-menu-box .main-list > li {
+  padding: 0 60px 60px 0;
+}
+
+.all-menu-box .main-list.service > li {
+  width: 18%;
+}
+
+.all-menu-box .main-list li h4 {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 2;
+}
+
+.all-menu-box .main-list li h4 a {
+  color: #ffffff;
+}
+
+.all-menu-box .sub-list li a {
+  color: #ffffff;
+  opacity: 0.7;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.all-menu-box .sub-list li a:hover {
+  opacity: 1;
 }
 
 #mainbanner .inner {

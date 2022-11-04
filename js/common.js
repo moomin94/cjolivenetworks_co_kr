@@ -6,13 +6,13 @@ document.addEventListener("DOMContentLoaded", function(){
   const searchBtn = document.querySelector('#header .search');
   const searchWrap = document.querySelector('.search-wrap');
   const searchCloseBtn = searchWrap.querySelector('.close');
-  searchBtn.addEventListener('click', function(){
+  searchBtn.addEventListener('click', function(e){
+    e.preventDefault();
     searchWrap.classList.add('on');
-    document.body.style.overflow = 'hidden';
   })
-  searchCloseBtn.addEventListener('click', function(){
+  searchCloseBtn.addEventListener('click', function(e){
+    e.preventDefault();
     searchWrap.classList.remove('on');
-    document.body.style.overflow = 'auto';
   })
 
   // all menu toggle

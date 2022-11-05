@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
   // scroll up down event
   let before = 0;
-  window.addEventListener('scroll',(ev)=>{
+  window.addEventListener('scroll',()=>{
     if(window.scrollY <= 4){
       headerWrap.classList.remove('on');
       headerWrap.classList.add('fixed');
@@ -97,23 +97,7 @@ document.addEventListener("DOMContentLoaded", function(){
   	before = window.scrollY;
   });
 
-  // Main Img Slide
-  // const mainImg = document.querySelector('.main-img-wrap');
-  // const pageNow = document.querySelector('.btn-box .now');
-  // let count = 1;
-  // let slideWidth = 100 / 6;
-  // let autoSlide = setInterval(nextSlide, 3000);
-  // function nextSlide(){
-  //   if(count == 6){
-  //     clearInterval(autoSlide);
-  //     return;
-  //   }
-  //   mainImg.style.transform = `translateX(${-count*slideWidth}%)`;
-  //   mainImg.style.transition = 'transform 0.8s ease-in-out';
-  //   count++;
-  //   pageNow.innerText = count;
-  // };
-  //
+  // main slide play & pause btn
   const playPauseBtn = document.querySelector('.btn-wrap .pause');
   playPauseBtn.addEventListener('click', function(){
     if(this.className == 'pause'){
@@ -127,5 +111,53 @@ document.addEventListener("DOMContentLoaded", function(){
     }
   });
 
+  //width change event
+  const sectionFirst = document.querySelector('section#first');
+  const aiWrap = document.querySelector('.ai-wrap');
+  window.addEventListener('scroll',()=>{
+      let scrollTop = window.scrollY;
+      let widthNum = scrollTop / (sectionFirst.offsetHeight) * 100;
+      aiWrap.style.width = widthNum + '%';
+      if(scrollTop >= sectionFirst.offsetHeight){
+        aiWrap.style.width = '100%';
+      };
+  });
+
+  // AI area text-wrap animation
+  const aiTitle = document.querySelector('section#first .text-wrap > h3');
+  const aiText = document.querySelector('section#first .text-wrap > p');
+  const aiBtn = document.querySelector('section#first .text-wrap > a');
+  const contTitle = document.querySelector('section#second .text-wrap > h3');
+  const contText = document.querySelector('section#second .text-wrap > p');
+  const contBtn = document.querySelector('section#second .text-wrap > a');
+  window.addEventListener('scroll',()=>{
+    let scrollTop = window.scrollY;
+      if(aiWrap.offsetWidth >= 600){
+        setTimeout(function(){
+          aiTitle.classList.add('on');
+        },1000);
+        setTimeout(function(){
+          aiText.classList.add('on');
+        },1100);
+        setTimeout(function(){
+          aiBtn.classList.add('on');
+        },1200);
+        // aiText.classList.add('on');
+        // aiBtn.classList.add('on');
+      }else{
+        aiTitle.classList.remove('on');
+        aiText.classList.remove('on');
+        aiBtn.classList.remove('on');
+      }
+      if(scrollTop >= document.querySelector('section#second').offsetTop - 500){
+        contTitle.classList.add('on');
+        contText.classList.add('on');
+        contBtn.classList.add('on');
+      }else{
+        contTitle.classList.remove('on');
+        contText.classList.remove('on');
+        contBtn.classList.remove('on');
+      }
+  });
 
 });

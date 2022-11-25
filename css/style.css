@@ -1107,7 +1107,7 @@ a.btn + a {
 }
 
 #container section#fifth .inner,
-#container section#sixth .inner, {
+#container section#sixth .inner {
   width: 1280px;
   margin: 0 auto;
 }
